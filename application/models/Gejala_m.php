@@ -6,7 +6,19 @@ class Gejala_m extends CI_Model
 {
 
   
-    public function get($id = null )
+    public function get_id($id = null)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_gejala');
+        $this->db->join('tb_tipe_kecanduan', 'tb_tipe_kecanduan.id_penyakit = tb_gejala.penyakit');
+
+        if ($id != null) {
+            $this->db->where('id_gejala', $id);
+        }
+        $query = $this->db->get();
+        return $query;
+    }
+    public function get($id = null)
     {
         $this->db->select('*');
         $this->db->from('tb_gejala');

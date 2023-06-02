@@ -18,7 +18,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Tambah Data Gejala </h3>
+          <h3 class="box-title">Edit Data Gejala </h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -40,11 +40,11 @@
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Nama Gejala </label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"  name="nama_gejala" value="<?=  $row->nama_gejala ?>"  readonly >
+                <input type="text" class="form-control"  name="nama_gejala" value="<?=$row->nama_gejala ?>"   >
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">Nama Gejala </label>
+              <label for="inputPassword3" class="col-sm-2 control-label">Kecanduan  </label>
               <div class="col-sm-10">
               <?php echo form_dropdown('penyakit', $penyakit, $selectedpenyakit, ['class' => 'form-control', 'required' => 'required']) ?>
 
@@ -52,14 +52,14 @@
             </div>
 
             <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">Bobot Gejala </label>
+              <label for="inputPassword3" class="col-sm-2 control-label">Bobot </label>
               <div class="col-sm-10">
-                <input type="text" class="form-control"  name="probabilitas"  required>
+                <input type="text" class="form-control"  name="probabilitas" value="<?=  $row->nilai ?>" >
               </div>
             </div>   
           </div>
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary btn-sm btn-flat"> <i class="fa fa-upload"></i> Tambah Data </button>
+            <button type="submit" class="btn btn-primary btn-sm btn-flat"> <i class="fa fa-upload"></i> Update Data </button>
             <a href="<?=site_url('gejala')?>" class="btn btn-warning btn-sm btn-flat" > <i class="fa fa-undo"></i> Kembali</a>
         </div>
         </form>   

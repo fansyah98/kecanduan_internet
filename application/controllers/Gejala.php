@@ -53,11 +53,12 @@ class Gejala extends CI_Controller {
 		
 	}
 
-	public function edit($id = null )
+	public function edit($id = null)
 	{
-		$this->form_validation->set_rules('kode_gejala', 'kode_gejala', 'trim|required');
-        $this->form_validation->set_rules('nama_gejala', 'nama_gejala', 'trim|required');
-        // $this->form_validation->set_rules('probabilitas', 'probabilitas', 'trim|required');
+		$this->form_validation->set_rules('penyakit', 'penyakit', 'trim');
+        $this->form_validation->set_rules('gejala', 'gejala', 'trim');
+        $this->form_validation->set_rules('probabilitas', 'probabilitas', 'trim|required');
+
 
 		if ($this->form_validation->run() == FALSE) {
 			$query = $this->gejala_m->get($id);
@@ -67,9 +68,10 @@ class Gejala extends CI_Controller {
 					$query_penyakit = $this->tipe_kecanduan_m->get();
 					$penyakit[null] = '- pilih data - ';
 					foreach ($query_penyakit->result() as $st) {
-						$penyakit[$st->id_penyakit] = $st->kode_penyakit .'  |  '. $st->keterangan;
+						$penyakit[$st->id_penyakit] = $st->kode_penyakit .'  |  '. $st->nama_penyakit;
 					}
 
+				
 					
 					$data = array(
 						'row' => $data,
@@ -85,14 +87,10 @@ class Gejala extends CI_Controller {
 			$post = $this->input->post(null , TRUE);
 			$this->gejala_m->edit($post);
 		  	if($this->db->affected_rows() > 0) {
-			$this->session->set_flashdata('success', 'Data Berhasil di simpan !!!');
+			$this->session->set_flashdata('success', 'Data Berhasil di ubah!');
 			  }
 		 	 redirect('gejala');		
 		}
-
-		
 	}
-
-
 
 }
