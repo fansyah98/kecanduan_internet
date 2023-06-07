@@ -10,7 +10,7 @@ class Gejala_m extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tb_gejala');
-        $this->db->join('tb_tipe_kecanduan', 'tb_tipe_kecanduan.id_penyakit = tb_gejala.penyakit');
+        // $this->db->join('tb_tipe_kecanduan', 'tb_tipe_kecanduan.id_penyakit = tb_gejala.penyakit');
 
         if ($id != null) {
             $this->db->where('id_gejala', $id);
@@ -22,7 +22,7 @@ class Gejala_m extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tb_gejala');
-        $this->db->join('tb_tipe_kecanduan', 'tb_tipe_kecanduan.id_penyakit = tb_gejala.penyakit');
+        // $this->db->join('tb_tipe_kecanduan', 'tb_tipe_kecanduan.id_penyakit = tb_gejala.penyakit');
 
         if ($id != null) {
             $this->db->where('id_gejala', $id);
@@ -36,7 +36,7 @@ class Gejala_m extends CI_Model
         $params = [
             'kode_gejala' => $post['kode_gejala'],
             'nama_gejala' => $post['nama_gejala'],
-            'penyakit' => $post['penyakit'],
+            // 'penyakit' => $post['penyakit'],
             'nilai' => $post['probabilitas'],
         ];
         $this->db->insert('tb_gejala', $params);
@@ -57,7 +57,7 @@ class Gejala_m extends CI_Model
         $params = [
             'kode_gejala' => $post['kode_gejala'],
             'nama_gejala' => $post['nama_gejala'],
-            'penyakit' => $post['penyakit'],
+            // 'penyakit' => $post['penyakit'],
             'nilai' => $post['probabilitas'],
         ];
         $this->db->where('id_gejala', $post['id']);

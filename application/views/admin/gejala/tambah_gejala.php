@@ -37,7 +37,7 @@
                 <input type="text" class="form-control" name="kode_gejala" value="" >
               </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="kode_gejala" class="col-sm-2 control-label">Penyakit </label>
               <div class="col-sm-10">
                 <select name="penyakit" id=""  class="form-control" >
@@ -49,7 +49,7 @@
                      <?php }?>
                 </select>
               </div>
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Nama Gejala </label>
               <div class="col-sm-10">
@@ -57,7 +57,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword3" class="col-sm-2 control-label">Bobot Gejala </label>
+              <label for="inputPassword3" class="col-sm-2 control-label">Bobot  </label>
               <div class="col-sm-10">
                 <input type="text" class="form-control"  name="probabilitas"  required>
               </div>

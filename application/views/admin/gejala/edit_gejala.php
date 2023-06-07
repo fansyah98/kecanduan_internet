@@ -43,13 +43,12 @@
                 <input type="text" class="form-control"  name="nama_gejala" value="<?=$row->nama_gejala ?>"   >
               </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Kecanduan  </label>
               <div class="col-sm-10">
-              <?php echo form_dropdown('penyakit', $penyakit, $selectedpenyakit, ['class' => 'form-control', 'required' => 'required']) ?>
+              <//?php// echo form_dropdown('penyakit', $penyakit, $selectedpenyakit, ['class' => 'form-control', 'required' => 'required']) ?>
 
-            </div>
-            </div>
+            </div> -->
 
             <div class="form-group">
               <label for="inputPassword3" class="col-sm-2 control-label">Bobot </label>

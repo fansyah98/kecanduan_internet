@@ -33,7 +33,7 @@ class Gejala extends CI_Controller {
 	{
 		$this->form_validation->set_rules('kode_gejala', 'kode_gejala', 'trim|required');
         $this->form_validation->set_rules('nama_gejala', 'nama_gejala', 'trim|required');
-        $this->form_validation->set_rules('penyakit', 'penyakit', 'trim|required');
+        // $this->form_validation->set_rules('penyakit', 'penyakit', 'trim|required');
         $this->form_validation->set_rules('probabilitas', 'probabilitas', 'trim|required');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -55,8 +55,8 @@ class Gejala extends CI_Controller {
 
 	public function edit($id = null)
 	{
-		$this->form_validation->set_rules('penyakit', 'penyakit', 'trim');
-        $this->form_validation->set_rules('gejala', 'gejala', 'trim');
+		// $this->form_validation->set_rules('penyakit', 'penyakit', 'trim');
+        // $this->form_validation->set_rules('gejala', 'gejala', 'required');
         $this->form_validation->set_rules('probabilitas', 'probabilitas', 'trim|required');
 
 
@@ -65,17 +65,15 @@ class Gejala extends CI_Controller {
 			if ($query->num_rows() > 0) {
 				$data = $query->row();
 
-					$query_penyakit = $this->tipe_kecanduan_m->get();
-					$penyakit[null] = '- pilih data - ';
-					foreach ($query_penyakit->result() as $st) {
-						$penyakit[$st->id_penyakit] = $st->kode_penyakit .'  |  '. $st->nama_penyakit;
-					}
-
-				
+					// $query_penyakit = $this->tipe_kecanduan_m->get();
+					// $penyakit[null] = '- pilih data - ';
+					// foreach ($query_penyakit->result() as $st) {
+					// 	$penyakit[$st->id_penyakit] = $st->kode_penyakit .'  |  '. $st->nama_penyakit;
+					// }
 					
 					$data = array(
 						'row' => $data,
-						'penyakit' => $penyakit, 'selectedpenyakit' => $data->penyakit,
+						// 'penyakit' => $penyakit, 'selectedpenyakit' => $data->penyakit,
 					);
 
 				$this->template->load('template', 'admin/gejala/edit_gejala', $data);

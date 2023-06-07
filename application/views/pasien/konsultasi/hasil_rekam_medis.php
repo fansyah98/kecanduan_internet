@@ -51,8 +51,7 @@
                     <thead class="bg-red">
                         <tr>
                             <th style="width: 3%;">No </th>
-                            <th> Diagnosa Penyakit Terpilih </th>
-                            <th> Nilai Probabilitas </th>
+                            <th colspan="2"> Presentasi Setiap Penyakit </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +60,7 @@
                             $no = 1;
                             foreach ($diagnosa as $kamu => $data) { ?>
                                 <td><?= $no++ ?></td>
-                                <td><?= $data['nama_penyakit']?></td>
+                                <td>Presentase Pasien Menderita Penyakit <?= $data['nama_penyakit']?> Sebesar <?= floor($data['hasil_probabilitas'] * 100)?>% </td>
                                 <td><?= $data['hasil_probabilitas']?></td>
                                   
                         </tr>
@@ -73,7 +72,7 @@
           
           <table class="table table-bordered table-hover table-responsive" >
                   <tr class="bg-red" >
-                    <th  colspan="3" class="text-center" >Hasil Diagnosa Dari Pakar </th>
+                    <th  colspan="3" class="text-center" >Hasil Diagnosa Sistem</th>
                   </tr>
                   <tr  >
                     <th>Nama : </th>
