@@ -2,21 +2,19 @@
 SISTEM PAKAR DIAGNOSA KECANDUAN PENGGUNAAN INTERNET DENGAN MENGGUNAKAN METODE TEOREMA BAYES
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Kecanduan internet telah menyerang berbagai golongan, baik anak-anak, remaja, orang dewasa maupun orang tua, apalagi dengan adanya trend-trend cara berinteraksi diinternet seperti Facebook, Twitter, YM (Chatting) dan juga Game Online (Warcraft, Poin Blank, Mobile Legend), transaksi perdangangan online (E-commers) . Internet addiction diartikan sebagai sebuah sindrom yang ditandai dengan menghabiskan sejumlah waktu yang sangat banyak dalam menggunakan internet dan tidak mampu mengontrol penggunaannya saat online. Orang-orang yang menunjukan sindrom ini akan merasa cemas, kesedihan, depresi, mudah marah atau hampa saat tidak online di internet.
 
 *******************
 Release Information
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+PHP Version 7.4.3
+RAM 8 GB
+Database MYSQL
+PROGRAM - PHP
+				- HTML
+				- CSS
+				- CODEIGNITER3
 
 **************************
 Changelog and New Features
