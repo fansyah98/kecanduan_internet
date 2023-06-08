@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jun 2023 pada 20.10
+-- Waktu pembuatan: 08 Jun 2023 pada 17.47
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -42,7 +42,7 @@ INSERT INTO `tb_aturan` (`id_rule`, `penyakit`, `gejala`, `probabilitas`) VALUES
 (1, 1, 1, 0.2),
 (2, 1, 2, 1),
 (4, 1, 3, 0.2),
-(5, 4, 4, 0.3),
+(5, 1, 4, 0.3),
 (6, 1, 5, 0.3),
 (7, 1, 6, 1),
 (8, 1, 7, 1),
@@ -52,7 +52,16 @@ INSERT INTO `tb_aturan` (`id_rule`, `penyakit`, `gejala`, `probabilitas`) VALUES
 (13, 2, 11, 0.3),
 (14, 2, 12, 1),
 (15, 2, 13, 0.3),
-(16, 2, 16, 1);
+(16, 2, 16, 1),
+(17, 3, 20, 0.5),
+(18, 3, 21, 0.3),
+(19, 3, 22, 0.4),
+(20, 3, 23, 0.5),
+(21, 4, 24, 1),
+(22, 4, 25, 0.4),
+(23, 4, 28, 1),
+(24, 1, 27, 0.4),
+(25, 1, 26, 1);
 
 -- --------------------------------------------------------
 
@@ -118,8 +127,8 @@ CREATE TABLE `tb_hasil_diagnosa` (
 
 INSERT INTO `tb_hasil_diagnosa` (`id_hasil`, `hasil_probabilitas`, `penyakit`, `user`, `tanggal`, `waktu`, `solusi`) VALUES
 (11, 15, 'Kecanduan Ringan', 'Riza Maulana', '2023-05-21', '08:05:20', 'Kamu dapat melakukan kegiatan lain seperti berolahraga, menyanyi, memasak, menari, bermain musik, mengikuti kegiatan organisasi di tempat ibadah atau di lingkungan rumah, dan lainnya.'),
-(35, 50, 'Kecanduan Ringan', 'Ummu Salama', '2023-06-07', '08:03:11', 'Kamu dapat melakukan kegiatan lain seperti berolahraga, menyanyi, memasak, menari, bermain musik, mengikuti kegiatan organisasi di tempat ibadah atau di lingkungan rumah, dan lainnya.'),
-(36, 50, 'Kecanduan Ringan', 'Ummu Salama', '2023-06-07', '08:04:06', 'Kamu dapat melakukan kegiatan lain seperti berolahraga, menyanyi, memasak, menari, bermain musik, mengikuti kegiatan organisasi di tempat ibadah atau di lingkungan rumah, dan lainnya.');
+(36, 50, 'Kecanduan Ringan', 'Ummu Salama', '2023-06-07', '08:04:06', 'Kamu dapat melakukan kegiatan lain seperti berolahraga, menyanyi, memasak, menari, bermain musik, mengikuti kegiatan organisasi di tempat ibadah atau di lingkungan rumah, dan lainnya.'),
+(37, 41, 'Kecanduan Berat', 'Ummu Salama', '2023-06-08', '05:45:59', 'Kurangi penggunaan internet anda dan segera pergi cek kesehatan di pakar');
 
 -- --------------------------------------------------------
 
@@ -185,9 +194,11 @@ CREATE TABLE `temporary` (
 
 INSERT INTO `temporary` (`id_gejala`, `user_id`) VALUES
 (1, 2),
-(4, 2),
-(11, 2),
+(8, 2),
 (16, 2),
+(20, 2),
+(21, 2),
+(25, 2),
 (28, 2);
 
 -- --------------------------------------------------------
@@ -209,10 +220,13 @@ CREATE TABLE `temporary_final` (
 --
 
 INSERT INTO `temporary_final` (`id`, `gejala`, `penyakit`, `probabilitas`, `hasil_probabilitas`) VALUES
-(1, 1, 1, 0.2, 0.33898305084746),
-(2, 11, 2, 0.3, 0.50847457627119),
-(3, 16, 2, 1, 0.50847457627119),
-(4, 4, 4, 0.3, 0.15254237288136);
+(1, 1, 1, 0.2, 0.20512820512821),
+(2, 8, 2, 0.3, 0.30769230769231),
+(3, 16, 2, 1, 0.30769230769231),
+(4, 20, 3, 0.5, 0.076923076923077),
+(5, 21, 3, 0.3, 0.076923076923077),
+(6, 25, 4, 0.4, 0.41025641025641),
+(7, 28, 4, 1, 0.41025641025641);
 
 --
 -- Indexes for dumped tables
@@ -271,7 +285,7 @@ ALTER TABLE `temporary_final`
 -- AUTO_INCREMENT untuk tabel `tb_aturan`
 --
 ALTER TABLE `tb_aturan`
-  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_rule` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_gejala`
@@ -283,7 +297,7 @@ ALTER TABLE `tb_gejala`
 -- AUTO_INCREMENT untuk tabel `tb_hasil_diagnosa`
 --
 ALTER TABLE `tb_hasil_diagnosa`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_tipe_kecanduan`
@@ -301,7 +315,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `temporary_final`
 --
 ALTER TABLE `temporary_final`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
