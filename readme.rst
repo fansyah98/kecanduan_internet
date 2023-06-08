@@ -8,13 +8,7 @@ Kecanduan internet telah menyerang berbagai golongan, baik anak-anak, remaja, or
 Release Information
 *******************
 
-PHP Version 7.4.3
-RAM 8 GB
-Database MYSQL
-PROGRAM - PHP
-				- HTML
-				- CSS
-				- CODEIGNITER3
+Versi Rilis Adalah V.1.0 adalah versi pertama
 
 **************************
 Changelog and New Features
